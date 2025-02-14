@@ -24,6 +24,8 @@ app.get("/", (req, res) => {
   res.send("Arjun Food Traders API is running...");
 });
 app.use("/api/v1/company", require("./routes/companyRoutes"));
+const productRoutes = require("./routes/productRoutes"); // Import Product API
+app.use("/api/products", productRoutes); // Use Product API
 
 
 const PORT = process.env.PORT || 5000;
